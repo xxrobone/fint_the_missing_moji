@@ -6,33 +6,68 @@ postition.addEventListener('mousemove', (e) => {
   postition.style.setProperty('--y', e.clientY + 'px');
 });
 
-let emojis = document.querySelectorAll('.emoji');
-let missingEmoji = document.querySelectorAll('.missing_emoji');
+// creating array of the emojis in the html document
+let emojis = [...document.querySelectorAll('.emoji')];
+let missingEmoji = document.querySelector('.missing_moji');
 
 let moji;
 
 console.log(emojis);
 
+function phoneTouch(e) {
+  e.preventDefault();
+  if (e.target.className === moji.className) {
+    console.log('you found the moji');
+    e.target.classList.add('spin');
+    e.target.style.transform = 'scale(3)';
+    e.target.style.filter = 'drop-shadow(0px 3px 2px white)';
+  } else {
+    console.log('not The right one');
+    e.target.style.display = 'none';
+  }
+  return false;
+}
+
 emojis.forEach((e) => {
   e.addEventListener('click', (e) => {
     console.log(e.target.className);
-    e.target.style.display = 'none';
+
+    if (e.target.className === moji.className) {
+      console.log('you found the moji');
+      e.target.classList.add('spin');
+      e.target.style.transform = 'scale(3)';
+      e.target.style.filter = 'drop-shadow(0px 3px 2px white)';
+    } else {
+      console.log('not The right one');
+      e.target.style.display = 'none';
+    }
   });
 
   e.addEventListener('mouseenter', (e) => {
-    e.target.classList.add('tranform_scale_up');
-    console.log('this emoji is :' + e.target.className);
+    if (e.target.className === moji.className) {
+      console.log('its the one now click damnit');
+      e.target.classList.add('spin');
+    } else {
+      e.target.classList.add('tranform_scale_up');
+      console.log('this emoji is :' + e.target.className);
+    }
   });
 
   e.addEventListener('mouseleave', (e) => {
-    e.target.classList.remove('tranform_scale_up');
-    e.target.classList.remove('transform_scale:down');
-    console.log('this emoji is :' + e.target.className);
+    if (e.target.className === moji.className) {
+      console.log('yeah boi');
+      e.target.classList.remove('spin');
+    } else {
+      e.target.classList.remove('tranform_scale_up');
+      e.target.classList.add('tranform_scale_down');
+      console.log('this emoji is :' + e.target.className);
+    }
   });
+
+  e.addEventListener('touchend', phoneTouch, false);
 });
 
 function randomMoji(inputArr) {
-  let moji;
   // check that array actully is an array
   if (
     Array.isArray(inputArr) &&
@@ -42,9 +77,19 @@ function randomMoji(inputArr) {
   ) {
     moji = inputArr[Math.floor(Math.random() * inputArr.length)];
   } else {
-    console.log('No array of words is found, need one to function');
+    console.log('No array is found, need one to function');
   }
   return moji;
 }
 
 moji = randomMoji(emojis);
+
+let clone = moji.cloneNode(true);
+clone.classList.add('clone_moji');
+
+missingEmoji.append(clone);
+
+console.log(missingEmoji);
+
+console.log('this is the clone :' + clone.className);
+console.log('this is the moji :' + moji.className);
