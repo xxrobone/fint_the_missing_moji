@@ -1,7 +1,11 @@
 // getting the position of the mouse on move
 // flashlight effect is in css
 const postition = document.documentElement;
-postition.addEventListener('mousemove', (e) => {
+/* postition.addEventListener('mousemove', (e) => {
+  postition.style.setProperty('--x', e.clientX + 'px');
+  postition.style.setProperty('--y', e.clientY + 'px');
+}); */
+postition.addEventListener('pointermove', (e) => {
   postition.style.setProperty('--x', e.clientX + 'px');
   postition.style.setProperty('--y', e.clientY + 'px');
 });
@@ -18,12 +22,12 @@ function phoneTouch(e) {
   e.preventDefault();
   if (e.target.className === moji.className) {
     console.log('you found the moji');
-    e.target.classList.add('spin');
-    e.target.style.transform = 'scale(3)';
+    e.target.classList.add('spin', 'found');
     e.target.style.filter = 'drop-shadow(0px 3px 2px white)';
   } else {
     console.log('not The right one');
     e.target.style.display = 'none';
+    e.target.classList.add('tranform_scale_down');
   }
   return false;
 }
