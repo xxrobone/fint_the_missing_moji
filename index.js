@@ -13,8 +13,17 @@ postition.addEventListener('pointermove', (e) => {
 // creating array of the emojis in the html document
 let emojis = [...document.querySelectorAll('.emoji')];
 let missingEmoji = document.querySelector('.missing_moji');
+let msg = document.querySelector('.msg');
+let btn = document.querySelector('.btn');
+let showScore = document.querySelector('.score');
+
+btn.addEventListener('click', () => {
+  location.reload();
+});
 
 let moji;
+
+score = 0;
 
 console.log(emojis);
 
@@ -37,10 +46,13 @@ emojis.forEach((e) => {
     console.log(e.target.className);
 
     if (e.target.className === moji.className) {
+      score++;
+      showScore.textContent = `Player score = ${score}`;
+      btn.style.display = 'block';
       console.log('you found the moji');
-      e.target.classList.add('spin');
-      e.target.style.transform = 'scale(3)';
-      e.target.style.filter = 'drop-shadow(0px 3px 2px white)';
+      msg.textContent = 'You found the right one! YAY!';
+      e.target.classList.remove('spin');
+      e.target.classList.add('spin', 'found');
     } else {
       console.log('not The right one');
       e.target.style.display = 'none';
