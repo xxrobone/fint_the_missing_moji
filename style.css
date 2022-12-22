@@ -26,9 +26,13 @@ section {
     animation: text_animation_on_load 5s 1 forwards;
 }
 
+h1 {
+    color: white;
+    font-size: clamp(3rem, 10vw, 5rem); 
+}
+
 .text_on_load h1 {
-    color: #fff;
-    font-size: 5rem;
+    text-align: center;
     cursor: default;
     position: relative;
     z-index: 10;
@@ -53,9 +57,8 @@ section {
 }
 
 section > h1 {
+    text-align: center;
     margin-bottom: 20px;
-    color: #fff;
-    font-size: 5rem;
     cursor: default;
     animation-delay: 5s;
     animation: fade_in 10s 1 forwards;
@@ -376,6 +379,34 @@ element.style {
     transform: translate(-50%, -50%);
     opacity: 1;
     font-size: 5rem;
+}
+
+p {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+    font-size: 1.2rem;
+    color: white;
+    z-index: 1000;
+    width: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .missing_moji_wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    
+    
+    .missing_moji > .clone_moji {
+        font-size: 3rem;
+    }
+
+    p {
+        top: 150px;
+        left: 30px;
+        font-size: 1rem;
+    }
 }
 
 
