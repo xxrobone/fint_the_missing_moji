@@ -95,12 +95,12 @@
         transform: scale(1, .2) translateY(500px);
       }
     50% {
-    transform:scale(1, .2) translateX(100vw);
+    transform:scale(1, .2) translateX(100vw) translateY(500px);
       opacity:1;
       }
      
       99% {
-        transform:scale(1, 0) translateX(0);
+        transform:scale(1, 0) translateY(500px);
         opacity:0;
     }
     
