@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap');
+
+:root {
+    --color-primary: #121828;
+    --color-secondary: #fafafa;
+    --color-grayish: #dacdcd;
+    --color-alt: #222428;
+    --color-btn: #ffcb4c ;
+    --color-right: #6ec075;
+    --color-wrong: #d66064;
+    --color-black: #000;
+    --color-white: #fff;
+
+    
+    --font-game: 'Press Start 2P', cursive;
+    --font-text: 'Lato', sans-serif;
+    --size-base: clamp(1rem, 3vw, 1.5rem);
+    --size-medium: clamp(1.5rem, 4vw, 2rem);
+    --size-large: clamp(2.5rem, 6vw, 4rem);
+    --font-weight-thin: 100;
+    --font-weight-regular: 400;
+    --font-weight-bold: 800;
+}

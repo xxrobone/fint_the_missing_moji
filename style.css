@@ -1,4 +1,11 @@
+@import url('./base.css');
 @import url('./buttons.css');
+@import url('./modal.css');
+@import url('./flashlight.css');
+@import url('./emoji.css');
+@import url('./animations.css');
+
+
 
 * {
     padding: 0;
@@ -7,10 +14,11 @@
     touch-action: none;
 }
 
-.body {
+html,
+body {
     width: 100%;
-    min-height: 100vh;
-    font-family: 'Press Start 2P', cursive;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 .msg {
@@ -19,9 +27,18 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: clamp(2rem, 8vw, 3rem); 
+    font-size: var(--size-medium);
     text-align: center;
     z-index: 10000;
     color: silver;
+}
+
+.btn_container p {
+    position: relative;
+    font-family: var(--font-text);
+    color: var(--color-primary);
+    margin: 0.25rem 0;
+    font-size: var(--size-base);
 }
 
 section {
@@ -48,9 +65,9 @@ section {
 }
 
 h1 {
-    font-family: 'Press Start 2P', cursive;
+    font-family: var(--font-game);
     color: white;
-    font-size: clamp(2.5rem, 6vw, 4rem); 
+    font-size: var(--size-large); 
 }
 
 .text_on_load h1 {
@@ -163,116 +180,8 @@ section > h1 {
     }    
 }
 
-.emoji_load,
-.emoji {
-    position: absolute;
-    font-size: 2.5rem;
-    cursor: pointer;
-}
-
-.emoji {
-    opacity: 0.5;
-    transition: all 0.3s ease-in-out;
-}
-
-.smiley {
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    color: #fff;
-}
-
-.hahaa {
-    position: absolute;
-    top: 75%;
-    left: 20%;
-    color: #fff;
-}
-
-.inlove {
-    position: absolute;
-    top: 55%;
-    left: 40%;
-    color: #fff;
-}
-
-.cool {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    color: #fff;
-}
-
-.inspect {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    color: #fff;
-}
-
-.sleepy{
-    position: absolute;
-    top: 90%;
-    left: 5%;
-    color: #fff;
-}
-
-.nerdy{
-    position: absolute;
-    top: 10%;
-    left: 80%;
-    color: #fff;
-}
 
 
-.money{
-    position: absolute;
-    top: 70%;
-    left: 70%;
-    color: #fff;
-}
-
-
-.clown{
-    position: absolute;
-    top: 85%;
-    left: 70%;
-    color: #fff;
-}
-
-
-.ghost{
-    position: absolute;
-    top: 30%;
-    left: 75%;
-    color: #fff;
-}
-
-
-.alien{
-    position: absolute;
-    top: 90%;
-    left: 85%;
-    color: #fff;
-}
-
-
-.bot{
-    position: absolute;
-    top: 15%;
-    left: 35%;
-    color: #fff;
-}
-
-.flashlight {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: radial-gradient(circle at var(--x) var(--y), transparent 0%, rgba(0,0,0,0.99) 20% );
-}
 
 /* cursor styling */
 /* .cursorcover {
@@ -316,70 +225,8 @@ section > h1 {
     transform: matrix(1, 0, 0, 1, 1, 1);
 } */
 /*  */
-.tranform_scale_up {
-    animation: hover_scale_up 3s 1 ease-out;
-}
-.transform_scale_down {
-    animation-delay: 2s;
-    animation: hover_scale_down 3s 1 ease-in;
-}
-
-.spin {
-    animation-delay: 2s;
-    animation: spin_animation 2s infinite linear;
-}
-
-.found {
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    z-index: 1000;
-    transform: translateX(-50%) scale(3);
-}
 
 
-@keyframes fade_in {
-    from {
-        opacity: 0;
-    }   
-    to  {
-        opacity: 1;  
-    }
-}
-
-@keyframes hover_scale_up {
-    from {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-   to {
-        transform: scale(1.5);
-        opacity: 1;
-        text-shadow: 5px 5px 10px 20px white;
-    }    
-}
-
-@keyframes hover_scale_down {
-    from {
-        transform: scale(2);
-        opacity: 1;
-    }
-
-    to {
-        transform: scale(0.1);
-        opacity: 0.1;
-    }    
-}
-
-@keyframes spin_animation {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }    
-}
 
 .missing_moji_wrapper {
     position: fixed;
@@ -404,20 +251,13 @@ section > h1 {
     justify-content: center;
 }
 
-.missing_moji > .clone_moji {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    font-size: 5rem;
-}
 
-p {
+
+.the_moji {
     font-family: 'Press Start 2P', cursive;
     position: fixed;
-    top: 0px;
-    left: 30px;
+    top: 10vh;
+    left: 10vw;
     font-size: 1.2rem;
     color: white;
     z-index: 1000;
@@ -438,8 +278,7 @@ p {
     right: 1rem;
     color: white;
     font-size: clamp(1rem, 3vw, 2rem);
-    /* writing-mode: vertical-rl;
-    text-orientation: sideways;   */
+    /*   */
     writing-mode: vertical-lr;
     text-orientation: mixed; 
 

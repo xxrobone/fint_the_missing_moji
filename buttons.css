@@ -1,0 +1,67 @@
+/* Buttons, start button  */
+
+/* .btn_container {
+   
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1000;
+} */
+
+.btn_start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 2.5rem;
+    font-family: var(--font-game);
+    font-size: var(--size-base);
+    border: 3px solid var(--color-white);
+    border-radius: 2.5rem;
+    background-color: var(--color-btn);
+    color: var(--color-primary);
+    cursor: pointer;
+    z-index: 100;
+    transition: border 0.3s ease-in-out;
+}
+
+.btn_start:hover {
+    border: 5px solid var(--color-right);
+   
+}
+
+.btn_start:active {
+    border: 0px solid var(--color-right);
+    
+}
+
+
+.btn_ds {
+    position: relative;
+    outline: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: filter 0.2s ease-in-out, transform 0.2s ease;
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.4));
+    cursor: pointer;
+}
+
+.btn_ds:hover {
+    filter: drop-shadow(1px 6px 2px rgba(0,0,0,0.5));
+   
+}
+
+.btn_ds:active {
+    filter: drop-shadow(0px 2px 1px rgba(0,0,0,0.2));
+    transform: scale(0.98);
+}
+
+

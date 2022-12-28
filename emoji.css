@@ -1,0 +1,109 @@
+.emoji_load,
+.emoji {
+    position: absolute;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.emoji {
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+}
+
+.smiley {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    color: #fff;
+}
+
+.hahaa {
+    position: absolute;
+    top: 75%;
+    left: 20%;
+    color: #fff;
+}
+
+.inlove {
+    position: absolute;
+    top: 55%;
+    left: 40%;
+    color: #fff;
+}
+
+.cool {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    color: #fff;
+}
+
+.inspect {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    color: #fff;
+}
+
+.sleepy{
+    position: absolute;
+    top: 90%;
+    left: 5%;
+    color: #fff;
+}
+
+.nerdy{
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    color: #fff;
+}
+
+
+.money{
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    color: #fff;
+}
+
+
+.clown{
+    position: absolute;
+    top: 85%;
+    left: 70%;
+    color: #fff;
+}
+
+
+.ghost{
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    color: #fff;
+}
+
+
+.alien{
+    position: absolute;
+    top: 90%;
+    left: 85%;
+    color: #fff;
+}
+
+
+.bot{
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    color: #fff;
+}
+
+.missing_moji > .clone_moji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    font-size: 5rem;
+}

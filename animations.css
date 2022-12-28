@@ -1,0 +1,107 @@
+.tranform_scale_up {
+    animation: hover_scale_up 3s 1 ease-out;
+}
+.transform_scale_down {
+    animation-delay: 2s;
+    animation: hover_scale_down 3s 1 ease-in;
+}
+
+.spin {
+    animation-delay: 2s;
+    animation: spin_animation 2s infinite linear;
+}
+
+.found {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    z-index: 1000;
+    transform: translateX(-50%) scale(3);
+}
+
+.dissapear {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+        -webkit-animation-name: dissapear;
+  animation-name: dissapear;
+    transform-origin:bottom;
+   
+}
+
+.wow_wow {
+    animation: wow_wow 1.2s infinite ease-in-out both;
+}
+
+@keyframes wow_wow {
+    0%, 100% {
+        background-color: var(--color-btn);
+    }
+
+    50% {
+        background-color: rgb(209, 170, 43);
+    }
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+    }   
+    to  {
+        opacity: 1;  
+    }
+}
+
+@keyframes hover_scale_up {
+    from {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+   to {
+        transform: scale(1.5);
+        opacity: 1;
+        text-shadow: 5px 5px 10px 20px white;
+    }    
+}
+
+@keyframes hover_scale_down {
+    from {
+        transform: scale(2);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0.1);
+        opacity: 0.1;
+    }    
+}
+
+@keyframes spin_animation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }    
+}
+
+
+@keyframes dissapear {
+    0% {
+
+    }
+     
+      25% {
+        transform: scale(1, .2) translateY(500px);
+      }
+    50% {
+    transform:scale(1, .2) translateX(100vw);
+      opacity:1;
+      }
+     
+      99% {
+        transform:scale(1, 0) translateX(0);
+        opacity:0;
+    }
+    
+}

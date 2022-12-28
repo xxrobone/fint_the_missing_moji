@@ -1,3 +1,21 @@
+const startButton = document.querySelector('.btn_start');
+// creating array of the emojis in the html document
+let emojis = [...document.querySelectorAll('.emoji')];
+let missingEmoji = document.querySelector('.missing_moji');
+let msg = document.querySelector('.msg');
+let btn = document.querySelector('.btn');
+let showScore = document.querySelector('.score');
+
+startButton.addEventListener('click', startGame);
+
+function startGame() {
+  startButton.classList.remove('wow_wow');
+  startButton.classList.add('dissapear');
+  setTimeout(() => {
+    startButton.style.display = 'none';
+  }, 1300);
+}
+
 // getting the position of the mouse on move
 // flashlight effect is in css
 const postition = document.documentElement;
@@ -9,13 +27,6 @@ postition.addEventListener('pointermove', (e) => {
   postition.style.setProperty('--x', e.clientX + 'px');
   postition.style.setProperty('--y', e.clientY + 'px');
 });
-
-// creating array of the emojis in the html document
-let emojis = [...document.querySelectorAll('.emoji')];
-let missingEmoji = document.querySelector('.missing_moji');
-let msg = document.querySelector('.msg');
-let btn = document.querySelector('.btn');
-let showScore = document.querySelector('.score');
 
 btn.addEventListener('click', () => {
   location.reload();
@@ -50,10 +61,16 @@ emojis.forEach((e) => {
       showScore.textContent = `Player score = ${score}`;
       btn.style.display = 'block';
       console.log('you found the moji');
+      msg.style.color = '#6ec075';
       msg.textContent = 'You found the right one! YAY!';
       e.target.classList.remove('spin');
       e.target.classList.add('spin', 'found');
     } else {
+      msg.textContent = 'Not the right one';
+      msg.style.color = '#d66064';
+      setTimeout(() => {
+        msg.textContent = '';
+      }, 1500);
       console.log('not The right one');
       e.target.style.display = 'none';
     }
@@ -80,7 +97,7 @@ emojis.forEach((e) => {
     }
   });
 
-  e.addEventListener('touchend', phoneTouch, false);
+  e.addEventListener('touchmove', phoneTouch, false);
 });
 
 function randomMoji(inputArr) {
